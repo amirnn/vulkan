@@ -1,3 +1,3 @@
 # SRC
 
-include_directories(vulkan)
+add_subdirectory(vulkan)
