@@ -1,8 +1,4 @@
-# SRC
-
-
-include_directories(vulkan)
-
+# Vulkan
 find_package(Vulkan REQUIRED)
 include_directories(Vulkan::Headers)
 
