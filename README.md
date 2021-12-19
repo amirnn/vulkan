@@ -16,3 +16,4 @@ conan install .. --profile=profile-macos --build=missing
 ## Shader Compiler
 
 We use Google's glslc which has a familiar GCC- and Clang-like usage. [Link](https://github.com/google/shaderc).
+After download, one can put it in PATH.
