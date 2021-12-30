@@ -5,25 +5,31 @@
 
 #include <cstdlib>
 #include <exception>
+#include <functional>
 #include <iostream>
 #include <memory>
-#include <functional>
 
 class TriangleApp {
  public:
   static const uint32_t WIDTH = 800;
   static const uint32_t HEIGHT = 600;
   void run() {
+    initWindow();
     initVulkan();
     mainLoop();
     cleanup();
   }
 
  private:
-  std::function<void(GLFWwindow *)> winDeleter_ = [](GLFWwindow *  ptr){ glfwDestroyWindow(ptr);};
+  std::function<void(GLFWwindow *)> winDeleter_ = [](GLFWwindow *ptr) {
+    glfwDestroyWindow(ptr);
+  };
   using pWin = std::unique_ptr<GLFWwindow, decltype(winDeleter_)>;
   pWin window_;
-  auto initVulkan()  -> void;
+  VkInstance instance;
+  auto createInstance() -> void;
+  auto initWindow() -> void;
+  auto initVulkan() -> void;
   auto mainLoop() -> void;
   auto cleanup() -> void;
 };
