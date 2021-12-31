@@ -11,6 +11,11 @@
 
 class TriangleApp {
  public:
+#ifdef NDEBUG
+  const bool enableValidationLayers = false;
+#else
+  const bool enableValidationLayers = true;
+#endif
   static const uint32_t WIDTH = 800;
   static const uint32_t HEIGHT = 600;
   void run() {
