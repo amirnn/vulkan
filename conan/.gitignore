@@ -1,5 +1,6 @@
 *
 !.gitignore
 !profile-macos
-!profile-win
+!profile-win-vs
+!profile-win-msvc
 !conanfile.txt
