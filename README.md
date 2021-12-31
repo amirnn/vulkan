@@ -10,7 +10,7 @@ To install the dependencies run the command below for your desired platform: (TO
 
 ```console
 cd conan
-conan install .. --profile=profile-macos --build=missing
+conan install . --profile=profile-macos --build=missing
 ```
 
 ## Shader Compiler
